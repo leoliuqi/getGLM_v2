@@ -196,10 +196,10 @@ function getTargetTime() {
 
   // ── Phase 5: 验证码 / 支付 ──
   console.log('──────────────────────────────');
-  console.log('验证码/支付请手动完成 (最多 120s)');
+  console.log('验证码/支付请手动完成 (最多 180s)');
   console.log('──────────────────────────────');
 
-  const maxWait = Date.now() + 120_000;
+  const maxWait = Date.now() + 180_000;
   while (Date.now() < maxWait) {
     const captcha = page.frameLocator('iframe[src*="captcha"]').first();
     if (await captcha.locator('body').isVisible().catch(() => false)) {
